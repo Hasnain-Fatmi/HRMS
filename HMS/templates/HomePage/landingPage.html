@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Hospital Management</title>
+  <!---Custom Css File!--->
+  <link rel="stylesheet" href="{% static 'landingPage_style.css' %}">
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <a href="#">HM<span>S</span></a>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="{% url 'team' %}">About</a></li>
+        <li><a href="{% url 'services' %}">Services</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+      <ul>   
+        <li class="dropdown">
+          <a href="#" class="login">Log in</a>
+          <div class="dropdown-content">
+            <a href="{% url 'signin' %}">Patient Login</a>
+            <a href="{% url 'doctor_login' %}">Doctor Login</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="btn">Register</a>
+          <div class="dropdown-content">
+            <a href="{% url 'signup' %}">Patient Register</a>
+            <a href="{% url 'doctor_register' %}">Doctor Register</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="content">
+      <h2>Welcome<br>Where Care Meets Compassion</h2>
+      <p>Access patient records anytime, anywhere. Our intuitive interface allows authorized personnel to retrieve and update records swiftly, enhancing collaboration among healthcare teams.</p>
+    </div>
+  </div>
+</body>
+</html>

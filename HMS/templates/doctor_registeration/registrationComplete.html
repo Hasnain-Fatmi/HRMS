@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voter Registration Confirmation</title>
+  {%load static%}
+    <link rel="stylesheet" href="{% static 'registrationComplete_styles.css'%}">
+</head>
+<body>
+  <div class="container">
+    <h2>Registered as a Doctor</h2>
+    <p> Thank you for becoming part of our virtual family. Kindly proceed to log in.</p>
+    <a href="{% url 'doctor_login' %}" class="login-btn">Login</a>
+  
+  
+  </div>
+</body>
+</html>

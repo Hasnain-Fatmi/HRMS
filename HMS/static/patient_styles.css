@@ -1,0 +1,70 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Set text color to white */
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* White shadow for better contrast */
+}
+
+h1 {
+    color: #4caf50; /* Set heading text color to green */
+}
+
+/* Style the appointments table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid white; /* Adjust the border color */
+    padding: 10px;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+}
+
+/* Alternating row colors */
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.2); /* Light gray */
+}
+
+/* Form styling */
+input, button {
+    margin: 5px;
+    color: black; /* Set input and button text color to black */
+}
+
+/* Style the "Add New Appointment" button */
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Style the new appointment form */
+#new-appointment-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#new-appointment-form label, #new-appointment-form input {
+    width: 100%;
+    margin-bottom: 10px;
+}

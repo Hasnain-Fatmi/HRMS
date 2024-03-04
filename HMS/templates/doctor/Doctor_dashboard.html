@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css' rel='stylesheet'>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'user_dashboard_style.css' %}">
+    <title>DashBoard</title>
+   </head>
+<body>
+  <div class="main_box">
+    <input type="checkbox" id="check">
+    <div class="btn_one">
+      <label for="check">
+        <i class="fas fa-bars"></i>
+      </label>
+    </div>
+    <div class="sidebar_menu">
+      <div class="logo">
+        <a href="#">HM<span>S</span></a>
+      </div>
+        <div class="btn_two">
+          <label for="check">
+            <i class="fas fa-times"></i>
+          </label>
+        </div>
+      <div class="menu">
+        <ul>
+          <li><i class="fas fa-chart-line"></i>
+            <a href="#">Dashboard</a>
+          </li>
+          <li>
+            <i class="fas fa-user-injured"></i>
+            <a href="{% url 'patient_list' %}">Patients</a>
+          </li>
+          <li>
+            <i class="fas fa-calendar-alt"></i>
+            <a href="{% url 'appointment_list' %}">Appointments</a>
+          </li>
+          <li>
+            <i class="fas fa-file-medical"></i>
+            <a href="{% url 'record_list' %}">Medical Records</a>
+          </li>
+          <li>
+            <i class="fas fa-prescription-bottle"></i>
+            <a href="{% url 'prescription_list' %}">Prescriptions</a>
+          </li>
+          <li>
+            <i class="far fa-file-alt"></i>
+            <a href="{% url 'report_list' %}">Reports</a>
+          </li>
+          <li>
+            <i class="fas fa-sign-out-alt"></i>
+            <a href="doctor_logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <h2>Welcome</h2>
+      <p>You can use this dashboard to navigate.</p>
+    </div>
+  </div>
+
+  </body>
+
+</html>

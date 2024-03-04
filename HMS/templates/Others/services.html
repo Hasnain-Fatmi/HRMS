@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/d8fb4d7f9a.js" crossorigin="anonymous"></script>
+  <title>Services</title>
+  <link rel="stylesheet" href="{% static 'services_styles.css' %}">
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <a href="#">HM<span>S</span></a>
+      </div>
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'team' %}">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+      <div class="buttons">
+        <a href="{% url 'signin' %}" class="login">Log in</a>
+        <a href="{% url 'signup' %}" class="btn">Register</a>
+      </div>
+    </nav>
+  <section>
+    <div class="row">
+      <h2 class="section-heading">Our Services</h2>
+    </div>
+    <div class="row">
+        <div class="card">
+          <div class="icon-wrapper">
+            <i class="fas fa-user"></i>
+          </div>
+          <h3>Patient Management</h3>
+          <p>
+            Management of patient records, medical history, diagnosis, and treatments.
+          </p>
+        </div>
+      
+        <div class="card">
+          <div class="icon-wrapper">
+            <i class="fas fa-money-bill-wave"></i>
+          </div>
+          <h3>Billing and Invoicing</h3>
+          <p>
+            Handling billing procedures, invoices, and insurance claims.
+          </p>
+        </div>
+      
+     
+        <div class="card">
+          <div class="icon-wrapper">
+            <i class="fas fa-boxes"></i>
+          </div>
+          <h3>Inventory Management</h3>
+          <p>
+            Tracking and managing hospital inventory and medical supplies.
+          </p>
+        </div>
+      
+      
+        <div class="card">
+          <div class="icon-wrapper">
+            <i class="fas fa-user-md"></i>
+          </div>
+          <h3>Pharmacy Management</h3>
+          <p>
+            Managing pharmacy tasks like stock control and dispensing medications.
+          </p>
+        </div>
+      
+    </div>
+  </section>
+  </div>
+</body>
+</html>

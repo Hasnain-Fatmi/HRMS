@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE HTML>
+<HTML lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <!-- Font Awesome for icons -->
+        <script src="https://kit.fontawesome.com/d8fb4d7f9a.js" crossorigin="anonymous"></script>
+        <!-- Custom Stylesheet -->
+        <link rel="stylesheet" href="{% static 'Login_styles.css' %}">
+
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+        <div class="logo">
+          <a href="#">HM<span>S</span></a>
+        </div>
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <div class="buttons">
+          <a href="{% url 'doctor_login' %}" class="login">Log in</a>
+          <a href="{% url 'doctor_register' %}" class="btn">Register</a>
+        </div>
+      </nav>
+    <div class ="wrapper">
+        <form action ="" method="post">
+            {% csrf_token %}
+            <H1>Doctor Login</H1>
+            <div class="input_box">
+                <input type ="text" name = "doctor_id"placeholder="Username" required> 
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input_box">
+                <input type ="Password" name = "password"placeholder="Password" required> 
+                <i class='bx bxs-lock-alt' ></i>          
+            </div>
+            
+            <div class="remember_me">
+                <label><input type="checkbox">Remember me </label>
+                <a href = "{% url 'forgetPassword' %}">Forget Password?</a> 
+            </div>
+            <!--<a href="" class="btn">Login</a>-->
+            <button type="submit" class="btn">Login</button>
+        
+
+            <div class="register_link">
+                <p>Not a Registered user?<a href = "{% url 'doctor_register' %}">Register</a>
+                </p>
+             </div>
+        </form>
+    </div>
+    </div>
+</body>
+
+</html>

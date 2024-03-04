@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'register_styles.css' %}">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+              <a href="#">HM<span>S</span></a>
+            </div>
+            <ul>
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="{% url 'services' %}">Services</a></li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+            <div class="buttons">
+                <a href="{% url 'doctor_login' %}" class="login">Log in</a>
+                <a href="{% url 'doctor_register' %}" class="btn">Register</a>
+              </div>
+          </nav>
+
+        <div class="wrapper">
+            <form action="{% url 'doctor_register' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h1>Doctor Registration</h1>
+            
+                <!-- Doctor ID -->
+                <div class="input_box">
+                    <div class="input_filed">
+                        <input type="text" name="doctor_id" placeholder="Doctor ID" required>
+                        <i class='bx bxs-id-card'></i>
+                    </div>
+                
+                <!-- Doctor Picture -->
+                    <div class="input_filed">
+                        <input type="file" name="doctor_picture" required>
+                        <i class='bx bxs-camera'></i>
+                    </div>
+                </div>
+
+                <!-- First and Last Name -->
+                <div class="input_box">
+                    <!-- First Name -->
+                    <div class="input_filed">
+                        <input type="text" name="firstName" placeholder="First Name" required>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <!-- Last Name -->
+                    <div class="input_filed">
+                        <input type="text" name="lastName" placeholder="Last Name" required>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                </div>
+
+                <!-- Email Address -->
+                <div class="input_box">
+                    <div class="input_filed">
+                        <input type="text" name="email" placeholder="Email Address" required>
+                        <i class='bx bxs-envelope'></i>
+                    </div>
+                <!-- Gender -->
+                    <div class="input_filed">
+                        <select name="gender" required>
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                </div>
+                <div class="input_box">
+                    <!--Speciality-->
+                    <div class="input_filed">
+                        <select name="speciality" required>
+                            <option value="" disabled selected>Select Speciality</option>
+                            <option value="general_medicine">General Medicine</option>
+                            <option value="pediatrics">Pediatrics</option>
+                            <option value="cardiology">Cardiology</option>
+                            <option value="neurology">Neurology</option>
+                            <option value="orthopedics">Orthopedics</option>
+                            <option value="dermatology">Dermatology</option>
+                            <option value="psychiatry">Psychiatry</option>
+                            <option value="gynecology">Gynecology</option>
+                        </select>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <!--Position-->
+                    <div class="input_filed">
+                        <select name="position" required>
+                            <option value="" disabled selected>Select Position</option>
+                            <option value="resident_doctor">Resident Doctor</option>
+                            <option value="surgeon">Surgeon</option>
+                            <option value="senior_physician">Senior Physician</option>
+                            <option value="physician_assistant">Physician Assistant</option>
+                        </select>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                </div>
+
+                <div class="input_box">
+                    <div class="input_filed">
+                        <input type="password" name="Password" id="password" placeholder="Password" pattern=".{8,}" title="Password must be at least 8 characters long." required>
+                        <i class='bx bxs-lock-alt'></i> 
+                    </div>
+                    <div class="input_filed">
+                        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required>
+                        <i class='bx bxs-lock-alt'></i>  
+                    </div>
+                </div>
+                <script>
+                    document.getElementById('confirmPassword').addEventListener('input', function () {
+                        var password = document.getElementById('password');
+                        var confirmPassword = document.getElementById('confirmPassword');
+                        if (password.value !== confirmPassword.value) {
+                            confirmPassword.setCustomValidity("Passwords don't match");
+                        } else {
+                            confirmPassword.setCustomValidity("");
+                        }
+                    });
+                </script>
+                
+                <!-- Declaration Checkbox and Register Button -->
+                <label><input type="checkbox" required>I hereby declare the information provided above is true and correct</label>
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

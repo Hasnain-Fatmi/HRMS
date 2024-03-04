@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'register_styles.css' %}">
+    <title>Registration</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+              <a href="#">HM<span>S</span></a>
+            </div>
+            <ul>
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="{% url 'services' %}">Services</a></li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+            <div class="buttons">
+              <a href="{% url 'signin' %}" class="login">Log in</a>
+              <a href="#" class="btn">Register</a>
+            </div>
+          </nav>
+
+    
+    <div class="wrapper">
+        <form action="" method="post">
+            {% csrf_token %}
+            <h1>Patient Registration</h1>
+        
+            <!-- Other input fields -->
+
+            <!-- First and Last Name -->
+            <div class="input_box">
+                <!-- First Name -->
+                <div class="input_filed">
+                    <input type="text" name="firstName" placeholder="First Name" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <!-- Last Name -->
+                <div class="input_filed">
+                    <input type="text" name="lastName" placeholder="Last Name" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+            </div>
+
+            <!-- Email Address and CNIC Number -->
+            <div class="input_box">
+                <!-- Email Address -->
+                <div class="input_filed">
+                    <input type="text" name="email" placeholder="Email Address" required>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <!-- Role -->
+                <div class="input_filed">
+                    <select name="role" required>
+                        <option value="" disabled selected>Select Role</option>
+                        <option value="InPatient">In-Patient</option>
+                        <option value="OutPatient">Out-Patient</option>
+                        <!-- Add more role options if needed -->
+                    </select>
+                    <i class='bx bx-user'></i>
+                </div>
+            </div>
+
+            <!-- Address and Phone Number -->
+            <div class="input_box">
+                <!-- Address -->
+                <div class="input_filed">
+                    <input type="text" name="address" placeholder="Address" required>
+                    <i class='bx bxs-home'></i>
+                </div>
+                <!-- Phone Number -->
+                <div class="input_filed">
+                    <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{11}" required>
+                    <i class='bx bxs-phone'></i>
+                </div>
+            </div>
+
+            <!-- Gender and Date of Birth -->
+            <div class="input_box">
+                <!-- Gender -->
+                <div class="input_filed">
+                    <select name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <!-- Date of Birth -->
+                <div class="input_filed">
+                    <input type="date" name="date_of_birth" placeholder="Date of Birth" required>
+                    <i class='bx bxs-calendar'></i>
+                </div>
+            </div>
+            <!-- Password and Confirm Password -->
+            <div class="input_box">
+                <div class="input_filed">
+                    <input type="password" name="Password" id="password" placeholder="Password" pattern=".{8,}" title="Password must be at least 8 characters long." required>
+                    <i class='bx bxs-lock-alt'></i> 
+                </div>
+                <div class="input_filed">
+                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required>
+                    <i class='bx bxs-lock-alt'></i>  
+                </div>
+            </div>
+            <script>
+                document.getElementById('confirmPassword').addEventListener('input', function () {
+                    var password = document.getElementById('password');
+                    var confirmPassword = document.getElementById('confirmPassword');
+                    if (password.value !== confirmPassword.value) {
+                        confirmPassword.setCustomValidity("Passwords don't match");
+                    } else {
+                        confirmPassword.setCustomValidity("");
+                    }
+                });
+            </script>
+            
+            <!-- Declaration Checkbox and Register Button -->
+            <label><input type="checkbox" required>I hereby declare the information provided above is true and correct</label>
+            <button type="submit" class="btn">Register</button>
+  
+        </form>
+    </div>
+    </div>
+</body>
+
+</html>

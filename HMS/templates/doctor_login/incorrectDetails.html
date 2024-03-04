@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Error</title>
+  {%load static%}
+  <link rel="stylesheet" href="{% static 'incorrectDetails.css'%}">
+</head>
+<body>
+  <div class="error-message">
+    <p>You have entered an incorrect password or Id.</p>
+    <div class="button-container">
+      <button class="retry-button"><a href="{% url 'signin' %}">Retry Login</a></button>
+      <button class="reset-button"><a href="{% url 'forgetPassword' %}">Reset Password</a></button>
+    </div>
+  </div>
+</body>
+</html>
