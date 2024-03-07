@@ -12,6 +12,6 @@ successfully integrated.
 
 • M. Hasnain Fatmi (Responsibility: Backend)
 
-• Rafeel Ahmad (Responsibilty: Frontend and Backend)
+• Rafeel Abdul (Responsibilty: Frontend and Backend)
 
 • Mahad Hassam (Respnsibility: Frontend)
